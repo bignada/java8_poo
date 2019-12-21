@@ -2,25 +2,30 @@ package com.ychar.practica_poo.GenericControl;
 
 import java.util.function.Supplier;
 
-import com.ychar.practica_poo.Interfaces.IGenericActions;
-
 public class GenericControl<T>{
-	protected String objeto = null;
+	protected T objeto = null;
 	
-	public static class GenericControlBuilder<T> {
-		private GenericControl<String> controlGenerico = new GenericControl<>();
-		private Supplier<String> supplier;
+	public GenericControl(Supplier<T> supplier){
+		this.objeto = supplier.get();
+	}
+	
+	public String getTipo() {
+		return objeto.toString();
+	}
+	
+	/*
+	public static class Builder<T> {
+		private GenericControl<T> controlGenerico;
 		
-		public GenericControl<String> build() {
-			controlGenerico.objeto = createObject(String::new);
+		public <T> Builder(Supplier<T> supplier){
+			this.controlGenerico = new GenericControl(supplier.get());
+		}
+		
+		public GenericControl<T> build() {
 			return this.controlGenerico;
 		}
 		
-		private String createObject(Supplier<String> supplier) {
-			return supplier.get();
-		}
-		
 	}
-
+	*/
 	
 }

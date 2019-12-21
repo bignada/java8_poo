@@ -10,8 +10,8 @@ public class UIJuego {
 	private static ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	
 	private static void cargarJugadores() {
-		GenericControl controlJugadores = new GenericControl.GenericControlBuilder<Jugador>().build();
-		
+		GenericControl controlJugadores = new GenericControl<Jugador>(Jugador::new);
+		System.out.println(controlJugadores.getTipo());
 		jugadores.add(new Jugador());
 	}
 	

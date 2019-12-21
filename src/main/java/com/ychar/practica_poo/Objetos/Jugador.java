@@ -17,7 +17,10 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Objeto de tipo Jugador";
+	}
 	
 	
 }
