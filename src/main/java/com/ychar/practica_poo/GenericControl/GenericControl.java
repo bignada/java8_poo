@@ -5,20 +5,21 @@ import java.util.function.Supplier;
 public class GenericControl<T>{
 	protected T objeto = null;
 	
-	public GenericControl(Supplier<T> supplier){
-		this.objeto = supplier.get();
+	public GenericControl(T object){
+		this.objeto = object;
 	}
 	
 	public String getTipo() {
 		return objeto.toString();
 	}
 	
-	/*
+	
 	public static class Builder<T> {
 		private GenericControl<T> controlGenerico;
 		
+		@SuppressWarnings("hiding")
 		public <T> Builder(Supplier<T> supplier){
-			this.controlGenerico = new GenericControl(supplier.get());
+			this.controlGenerico = new <T>GenericControl(supplier.get());
 		}
 		
 		public GenericControl<T> build() {
@@ -26,6 +27,6 @@ public class GenericControl<T>{
 		}
 		
 	}
-	*/
+	
 	
 }
